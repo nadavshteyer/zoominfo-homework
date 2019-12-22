@@ -1,0 +1,50 @@
+  <table  mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
+
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> <span class="truncate-text">{{element.name}}</span> </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="jobTitle">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Job Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.jobTitle}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="companyLocation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Location </th>
+      <td mat-cell *matCellDef="let element"> {{element.companyLocation}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="companyName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hqPhone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Hq. phone </th>
+      <td mat-cell *matCellDef="let element"> {{element.hqPhone}} </td>
+    </ng-container>
+
+      <ng-container matColumnDef="lastUpdated">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Updated </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastUpdated | date: ' dd MMM, yyyy HH:mm a'}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+  <div *ngIf="resultsReturned === false" class="noResults">
+    <h2>{{"no search results found:" | uppercase}}</h2>
+    <p>
+      Please remember that the search is for <b>Full Words.</b> <br/>
+      Dont forget, your search will check all the data fields.<br/>
+      Pro Tip: If you delete the search term, the initial Data returns to the table :)
+    </p>
+  </div>

@@ -1,0 +1,27 @@
+.searchBoxform {
+  display: flex;
+  flex-direction: row;
+  
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+  svg:hover {
+    fill: black;
+  }
+
+  #search-box {
+    font-size: 16px;
+    color: #4b2354;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    padding: 0 0 0 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+  }
+
+
+}
+

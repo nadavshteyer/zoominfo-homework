@@ -1,0 +1,8 @@
+<div>
+  <div class="toolbar">
+    <h2>Contact List</h2>
+    <app-search-box (searchData)="searchDataEvent($event)" ></app-search-box>
+  </div>
+  <app-table [searchData]="searchData"></app-table>
+</div>
+<router-outlet></router-outlet>
